@@ -1,3 +1,5 @@
+using System.ServiceProcess;
+
 namespace SaveSyncGUI
 {
     internal static class Program

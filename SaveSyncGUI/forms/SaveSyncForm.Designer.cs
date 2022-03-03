@@ -103,16 +103,15 @@
             // 
             // labelServiceStatus
             // 
-            this.labelServiceStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelServiceStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelServiceStatus.AutoSize = true;
-            this.labelServiceStatus.Location = new System.Drawing.Point(488, 231);
+            this.labelServiceStatus.Location = new System.Drawing.Point(420, 237);
+            this.labelServiceStatus.Margin = new System.Windows.Forms.Padding(0);
             this.labelServiceStatus.Name = "labelServiceStatus";
             this.labelServiceStatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelServiceStatus.Size = new System.Drawing.Size(214, 41);
+            this.labelServiceStatus.Size = new System.Drawing.Size(327, 41);
             this.labelServiceStatus.TabIndex = 1;
-            this.labelServiceStatus.Text = "Service Status: ";
+            this.labelServiceStatus.Text = "Service Status: Stopped";
             // 
             // SaveSyncForm
             // 
