@@ -12,8 +12,4 @@
     <Folder Include="resources\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\SaveSyncWorker\SaveSyncWorker.csproj" />
-  </ItemGroup>
-
 </Project>

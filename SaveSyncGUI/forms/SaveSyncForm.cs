@@ -1,8 +1,5 @@
 using System;
 using System.ServiceProcess;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using SaveSyncWorker;
 
 
 namespace SaveSyncGUI
@@ -12,15 +9,15 @@ namespace SaveSyncGUI
         
         public SaveSyncForm()
         {
-            
+            InitializeComponent();
         }
 
-        private void btnPickSaveDirectory_Click(object sender, EventArgs e)
+        private void btnAddSaveDirectory_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnPickSyncTarget_Click(object sender, EventArgs e)
+        private void btnAddSyncTarget_Click(object sender, EventArgs e)
         {
 
         }
