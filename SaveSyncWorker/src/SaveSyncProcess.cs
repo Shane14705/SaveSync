@@ -10,7 +10,7 @@ namespace SaveSyncWorker.src
 {
     public interface ISaveSyncProcess
     {
-        Task SyncFiles();
+        Task SyncFiles(object sender, FileSystemEventArgs e);
     }
     public class SaveSyncProcess : ISaveSyncProcess
     {
@@ -22,7 +22,7 @@ namespace SaveSyncWorker.src
 
         private readonly SaveSyncConfig config;
         private readonly ILogger<SaveSyncProcess> logger;
-        Task ISaveSyncProcess.SyncFiles()
+        Task ISaveSyncProcess.SyncFiles(object sender, FileSystemEventArgs e)
         {
             logger.LogInformation($"Syncing saves for {config.GameName} to {config.CloudSyncLocation}!");
             return Task.CompletedTask;
