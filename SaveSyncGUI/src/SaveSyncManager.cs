@@ -12,20 +12,31 @@ namespace SaveSyncGUI.src
     {
         private string watchingDir = null;
         private string syncTargetDir = null;
-        private FileSystemWatcher watcher = null;
+        private FileSystemWatcher watcher = new FileSystemWatcher();
         public SaveSyncManager(string dirToWatch, string targetDir)
         {
             this.watchingDir = dirToWatch;
             this.syncTargetDir = targetDir;
-            this.watcher = new FileSystemWatcher(dirToWatch);
-
+            this.watcher.Path = dirToWatch;
+            this.watcher.IncludeSubdirectories = true;
+            this.watcher.NotifyFilter = NotifyFilters.Attributes |
+                                   NotifyFilters.CreationTime |
+                                   NotifyFilters.DirectoryName |
+                                   NotifyFilters.FileName |
+                                   NotifyFilters.LastAccess |
+                                   NotifyFilters.LastWrite |
+                                   NotifyFilters.Security |
+                                   NotifyFilters.Size;
+            // Watch all files.  
+            this.watcher.Filter = "*.*";
             //This is where we should bind the events for this class's file watcher to the callbacks on this class instance 
-            this.watcher.Changed += OnFileChanged;
+            this.watcher.Changed += this.OnFileChanged;
+            this.watcher.EnableRaisingEvents = true;
         }
 
         public void OnFileChanged(object e, EventArgs args)
         {
-
+            Console.Out.WriteLine("Hi!");
         }
 
         private bool SaveToCloud()

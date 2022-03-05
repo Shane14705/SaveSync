@@ -39,6 +39,7 @@
             this.splitContainerLists = new System.Windows.Forms.SplitContainer();
             this.saveDirListBox = new System.Windows.Forms.ListBox();
             this.syncDirListBox = new System.Windows.Forms.ListBox();
+            this.pickSaveDirDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerLists)).BeginInit();
             this.splitContainerLists.Panel1.SuspendLayout();
@@ -116,8 +117,9 @@
             // 
             // saveSyncTray
             // 
+            this.saveSyncTray.Icon = ((System.Drawing.Icon)(resources.GetObject("saveSyncTray.Icon")));
             this.saveSyncTray.Text = "SaveSync";
-            this.saveSyncTray.Visible = true;
+            this.saveSyncTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.saveSyncTray_MouseDoubleClick);
             // 
             // splitContainerLists
             // 
@@ -174,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerLists)).EndInit();
             this.splitContainerLists.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.Resize += SaveSyncForm_Resize;
 
         }
 
@@ -188,5 +191,6 @@
         private SplitContainer splitContainerLists;
         private ListBox saveDirListBox;
         private ListBox syncDirListBox;
+        private FolderBrowserDialog pickSaveDirDialog;
     }
 }
